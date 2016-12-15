@@ -8,12 +8,14 @@ public class Main {
 
     public static void main(String... args) throws ArrayIndexOutOfBoundsException, IOException {
 
+        final String dir = System.getProperty("user.dir");
+        System.out.println(dir + "\\src\\test.txt");
 
         System.out.println("============= Scanner ============");
 
         Scanner scan = null;
         try {
-            scan = new Scanner(new File("test.txt"));
+            scan = new Scanner(new File(dir +"\\src\\test.txt"));
 
 
             while (scan.hasNextInt()) {
@@ -35,7 +37,7 @@ public class Main {
 
         System.out.println("============= BufferedReader ============");
 
-        try (BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(dir+"\\src\\test.txt"))) {
 
             String sCurrentLine;
 
